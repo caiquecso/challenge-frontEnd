@@ -1,8 +1,5 @@
-<script
-  lang="ts"
-  setup
->
-import { defineProps } from 'vue';
+<script lang="ts" setup>
+import { defineProps } from "vue";
 import QHeading from "./QHeading.vue";
 import QButton from "./QButton.vue";
 import QRating from "./QRating.vue";
@@ -23,42 +20,27 @@ defineProps<{
 </script>
 
 <template>
-
-<article class="bg-white p-6 rounded-lg shadow-sm border flex flex-col justify-between items-start gap-3">
-  <img
-    :src="iesLogo"
-    :alt="iesName"
-    class="h-10 object-contain"
-  />
-  <QHeading
-    tag="h2"
-    size="sm"
+  <article
+    class="bg-white p-6 rounded-lg shadow-sm border flex flex-col justify-between items-start gap-3 h-full"
   >
-    {{ courseName }}
-  </QHeading>
-  <QRating :rating="rating" />
-  <QPrice
-    :full-price="fullPrice"
-    :offered-price="offeredPrice"
-    :discount="discount"
-  />
-  <div>
-    <QText tag="p">{{ kind }}</QText>
-    <QText
-      tag="p"
-      color="minor"
-      size="sm"
-    >
-      {{ level }}
-    </QText>
-  </div>
-  <QButton
-    tag="a"
-    size="sm"
-    href="#"
-    class="w-full"
-  >
-    Quero esta bolsa
-  </QButton>
-</article>
+    <img :src="iesLogo" :alt="iesName" class="h-10 object-contain" />
+    <QHeading tag="h2" size="sm">
+      {{ courseName }}
+    </QHeading>
+    <QRating :rating="rating" />
+    <QPrice
+      :full-price="fullPrice"
+      :offered-price="offeredPrice"
+      :discount="discount"
+    />
+    <div>
+      <QText tag="p">{{ kind }}</QText>
+      <QText tag="p" color="minor" size="sm">
+        {{ level }}
+      </QText>
+    </div>
+    <QButton tag="a" size="sm" href="#" class="w-full">
+      Quero esta bolsa
+    </QButton>
+  </article>
 </template>
